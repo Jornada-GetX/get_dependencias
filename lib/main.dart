@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_dependencias/pages/home_page.dart';
+import 'package:get_dependencias/pages/metodos/create/create_home_page.dart';
 import 'package:get_dependencias/pages/metodos/lazyPut/lazy_put_page.dart';
 import 'package:get_dependencias/pages/metodos/metodos_home_page.dart';
 import 'package:get_dependencias/pages/metodos/put/put_page.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       getPages: [
         GetPage(
           name: '/',
@@ -47,6 +49,10 @@ class MyApp extends StatelessWidget {
             GetPage(
               name: '/putAsync',
               page: () => PutAsyncPage(),
+            ),
+            GetPage(
+              name: '/create',
+              page: () => CreateHomePage(),
             ),
           ],
         ),
