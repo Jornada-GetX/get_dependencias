@@ -33,7 +33,7 @@ class _CreateHomePageState extends State<CreateHomePage> {
               onPressed: () {
                 setState(() {
                   nome = Get.find<CreateController>().nome;
-                nomePut = Get.find<CreateController>(tag: 'put').nome;
+                  nomePut = Get.find<CreateController>(tag: 'put').nome;
                 });
               },
               child: const Text('Buscar nome put'),
