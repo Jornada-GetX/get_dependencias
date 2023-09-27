@@ -85,7 +85,7 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/bindings_builder_put',
-          binding: BindingsBuilder(() => BindingsController(nome: 'Inicicializado dentro do Binding Builder Put.')),
+          binding: BindingsBuilder.put(() => BindingsController(nome: 'Inicicializado dentro do Binding Builder Put.')),
           page: () => const HomeBindings(),
         ),
       ],

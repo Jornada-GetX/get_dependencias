@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_dependencias/pages/bindings/bindings_controller.dart';
+import 'package:get_dependencias/pages/bindings/home_bindings.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -42,6 +45,12 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/bindings_builder_put');
               },
               child: const Text('Bindings Builder Put'),
+            ),
+            TextButton(
+              onPressed: () {
+                Get.to(const HomeBindings(), binding: BindingsBuilder.put(() => BindingsController(nome: 'Inicializado sem rotas..')));
+              },
+              child: const Text('Bindings sem rota nomeada'),
             ),
           ],
         ),
