@@ -13,6 +13,7 @@ import 'package:get_dependencias/pages/metodos/put_async/put_async_page.dart';
 
 import 'pages/basico/basico_home_page.dart';
 import 'pages/bindings/bindings_controller.dart';
+import 'pages/bindings/middleware_binding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/bindings',
           binding: BindingsExemplo(),
+          middlewares: [MiddlewareBinding()],
           page: () => const HomeBindings(),
         ),
         GetPage(
