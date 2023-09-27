@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_dependencias/pages/bindings/bindings_exemplo.dart';
 import 'package:get_dependencias/pages/bindings/home_bindings.dart';
 import 'package:get_dependencias/pages/home_page.dart';
+import 'package:get_dependencias/pages/initial_binding/initial_binding.dart';
 import 'package:get_dependencias/pages/metodos/create/create_home_page.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/delete_home_page.dart';
 import 'package:get_dependencias/pages/metodos/delete_update/update_home_page.dart';
@@ -14,6 +15,7 @@ import 'package:get_dependencias/pages/metodos/put_async/put_async_page.dart';
 import 'pages/basico/basico_home_page.dart';
 import 'pages/bindings/bindings_controller.dart';
 import 'pages/bindings/middleware_binding.dart';
+import 'pages/initial_binding/initial_binding_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+      initialBinding: InitialBinding(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -89,6 +92,10 @@ class MyApp extends StatelessWidget {
           name: '/bindings_builder_put',
           binding: BindingsBuilder.put(() => BindingsController(nome: 'Inicicializado dentro do Binding Builder Put.')),
           page: () => const HomeBindings(),
+        ),
+        GetPage(
+          name: '/initial_binding',
+          page: () => const InitialBindingPage(),
         ),
       ],
     );
